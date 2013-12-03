@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.neilmarion.twsimple2.TWSimple2 { <init>(...); }
+

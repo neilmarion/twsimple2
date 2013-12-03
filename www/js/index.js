@@ -34,6 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        app.readyTwitter();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,7 +46,53 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    readyTwitter: function() {
+      cb.setConsumerKey("Qm0bF6mkfDmFufAc28gYw", "jKCu1DUo2V0qGheL0smR9f98GbtQiHUjIULGDpP4");
+      var id;
+      // check if we already have access tokens
+      if(localStorage.accessToken && localStorage.tokenSecret) {
+        // then directly setToken() and read the timeline
+        cb.setToken(localStorage.accessToken, localStorage.tokenSecret);
+        showHomeTimeline(20);
+        cb.__call(
+          "statuses_mentionsTimeline", {"count": "1"},
+          function (reply) {
+            for(var key in reply){
+              autoReply(reply[key].id, reply[key].user["screen_name"]); // auto reply to the tweet where I'm mentioned.
+              id = reply[key].id;
+            }
+          }           
+        );
+        
+        // now poll periodically and send an auto-reply when we are mentioned.
+        fetchTweets(id);
+      } else { // authorize the user and ask her to get the pin.
+        cb.__call(
+          "oauth_requestToken",
+              {oauth_callback: "http://localhost/"},
+              function (reply) {
+              // nailed it!
+                  cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+                  cb.__call(
+                  "oauth_authorize",  {},
+                  function (auth_url) {
+                    var ref = window.open(auth_url, '_blank', 'location=no'); // redirection.
+                    // check if the location the phonegap changes to matches our callback url or not
+                    ref.addEventListener("loadstart", function(iABObject) {
+                      if(iABObject.url.match(/localhost/)) {
+                        ref.close();
+                        authorize(iABObject);
+                      }
+                    });                 
+                  }
+            );
+              }
+        );
+      }
     }
+
+
 };
 
 var cb = new Codebird; // we will require this everywhere
@@ -164,54 +211,10 @@ function sendTweet() {
  
 /**************************** Let the coding begin ****************************/
  
-function onLoad() {
-  document.addEventListener("deviceready", onDeviceReady, false);
-}
+//function onLoad() {
+//  document.addEventListener("deviceready", onDeviceReady, false);
+//}
  
-function onDeviceReady() {
-  cb.setConsumerKey("Qm0bF6mkfDmFufAc28gYw", "jKCu1DUo2V0qGheL0smR9f98GbtQiHUjIULGDpP4");
-  var id;
-  // check if we already have access tokens
-  if(localStorage.accessToken && localStorage.tokenSecret) {
-    // then directly setToken() and read the timeline
-    cb.setToken(localStorage.accessToken, localStorage.tokenSecret);
-    showHomeTimeline(20);
-    cb.__call(
-      "statuses_mentionsTimeline", {"count": "1"},
-      function (reply) {
-        for(var key in reply){
-          autoReply(reply[key].id, reply[key].user["screen_name"]); // auto reply to the tweet where I'm mentioned.
-          id = reply[key].id;
-        }
-      }           
-    );
-    
-    // now poll periodically and send an auto-reply when we are mentioned.
-    fetchTweets(id);
-  } else { // authorize the user and ask her to get the pin.
-    cb.__call(
-      "oauth_requestToken",
-          {oauth_callback: "http://localhost/"},
-          function (reply) {
-          // nailed it!
-              cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-              cb.__call(
-              "oauth_authorize",  {},
-              function (auth_url) {
-                var ref = window.open(auth_url, '_blank', 'location=no'); // redirection.
-                // check if the location the phonegap changes to matches our callback url or not
-                ref.addEventListener("loadstart", function(iABObject) {
-                  if(iABObject.url.match(/localhost/)) {
-                    ref.close();
-                    authorize(iABObject);
-                  }
-                });                 
-              }
-        );
-          }
-    );
-  }
-}
  
 function authorize(o) {
   var currentUrl = o.url;
