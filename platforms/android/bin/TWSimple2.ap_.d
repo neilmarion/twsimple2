@@ -39,6 +39,7 @@
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine-html.js \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/img/logo.png \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/css/index.css \
+/home/neilmarion/DEV/twsimple2/platforms/android/assets/www/css/jquery.mobile-1.2.0.min.css \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/res/screen \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/res/icon \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/res/screen/windows-phone \

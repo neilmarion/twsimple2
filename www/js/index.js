@@ -60,6 +60,7 @@ var app = {
       if(localStorage.accessToken && localStorage.tokenSecret) {
         // then directly setToken() and read the timeline
         cb.setToken(localStorage.accessToken, localStorage.tokenSecret);
+                  alert("men2");
         showHomeTimeline(20);
         cb.__call(
           "statuses_mentionsTimeline", {"count": "1"},
@@ -72,13 +73,16 @@ var app = {
         );
         
         // now poll periodically and send an auto-reply when we are mentioned.
-        fetchTweets(id);
+        //fetchTweets(id);
       } else { // authorize the user and ask her to get the pin.
         cb.__call(
           "oauth_requestToken",
               {oauth_callback: "http://localhost/"},
               function (reply) {
               // nailed it!
+                  alert("men");
+                  console.log("men");
+                  console.log(reply);
                   cb.setToken(reply.oauth_token, reply.oauth_token_secret);
                   cb.__call(
                   "oauth_authorize",  {},
@@ -244,5 +248,5 @@ function authorize(o) {
       );
         }
     );
-    fetchTweets(null);
+    //fetchTweets(null);
 }
