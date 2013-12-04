@@ -17,6 +17,7 @@
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/spec \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/img \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/spec.html \
+/home/neilmarion/DEV/twsimple2/platforms/android/assets/www/plugins \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/css \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/cordova.js \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/cordova_plugins.js \
@@ -38,6 +39,9 @@
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.js \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine-html.js \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/img/logo.png \
+/home/neilmarion/DEV/twsimple2/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \
+/home/neilmarion/DEV/twsimple2/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www \
+/home/neilmarion/DEV/twsimple2/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www/InAppBrowser.js \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/css/index.css \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/css/jquery.mobile-1.2.0.min.css \
 /home/neilmarion/DEV/twsimple2/platforms/android/assets/www/res/screen \

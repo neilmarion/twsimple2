@@ -1,4 +1,17 @@
 /home/neilmarion/DEV/twsimple2/platforms/android/bin/classes.dex : \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$InAppBrowserClient.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$1.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$4.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$3.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$5.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppChromeClient.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$2.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$1.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$4.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$2.class \
+/home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$5$3.class \
 /home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/com/neilmarion/twsimple2/R$string.class \
 /home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/com/neilmarion/twsimple2/R.class \
 /home/neilmarion/DEV/twsimple2/platforms/android/bin/classes/com/neilmarion/twsimple2/BuildConfig.class \
